@@ -1,0 +1,184 @@
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-bluee: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+html {
+  font-size: 13px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: var(--light-grayish-blue);
+  display: grid;
+  min-height: 100vh;
+  align-items: center;
+  justify-items: center;
+}
+
+main {
+  width: 1100px;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, max-content);
+  grid-template-areas:
+    "one one two five"
+    "three four four five";
+  gap: 1.5vw;
+}
+
+.review-card {
+  padding: 2rem;
+  border-radius: 0.75rem;
+}
+
+.card-top {
+  display: flex;
+}
+
+.reviewer-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+}
+
+.reviewer {
+  margin-left: 1.2em;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--light-gray);
+}
+
+.grad {
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsla(0, 0%, 81%, 50%);
+}
+
+.main-review {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.6em 0;
+}
+
+.review-para {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: hsla(0, 0%, 81%, 70%);
+}
+
+.review-card-1 {
+  grid-area: one;
+  background: url("../src/images/bg-pattern-quotation.svg") top left 85%
+    no-repeat var(--moderate-violet);
+}
+
+.review-card-1 .main-review,
+.review-card-2 .main-review,
+.review-card-4 .main-review {
+  color: var(--white);
+}
+
+.review-card-2 {
+  grid-area: two;
+  background-color: var(--very-dark-grayish-blue);
+}
+
+.review-card-3 {
+  grid-area: three;
+  background-color: var(--white);
+}
+
+.review-card-3,
+.review-card-5 {
+  box-shadow: 5px 10px 20px 0 rgb(0 0 0 / 14%);
+}
+
+.review-card-3 .name,
+.review-card-5 .name {
+  color: var(--very-dark-grayish-blue);
+}
+
+.review-card-3 .grad,
+.review-card-5 .grad {
+  color: hsla(219, 29%, 14%, 0.5);
+}
+
+.review-card-3 .main-review,
+.review-card-5 .main-review {
+  color: var(--very-dark-grayish-blue);
+}
+
+.review-card-3 .card-bottom {
+  margin-top: 1.5em;
+}
+
+.review-card-3 .review-para,
+.review-card-5 .review-para {
+  color: hsla(219, 29%, 14%, 0.7);
+}
+
+.review-card-4 {
+  grid-area: four;
+  background-color: var(--very-dark-blackish-bluee);
+}
+
+.review-card-5 {
+  grid-area: five;
+  background-color: var(--white);
+}
+
+@media screen and (max-width: 1100px) {
+  body {
+    padding: 2rem 0;
+  }
+
+  main {
+    width: 850px;
+    height: auto;
+    grid-template-rows: repeat(4, max-content);
+    grid-template-areas:
+      "one one one five"
+      "two two two five"
+      "three three three five"
+      "four four four five";
+  }
+}
+
+@media screen and (max-width: 850px) {
+  main {
+    width: 90vw;
+    height: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, max-content);
+    grid-template-areas:
+      "one one one"
+      "two two two"
+      "three three three"
+      "four four four"
+      "five five five";
+    gap: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  main {
+    gap: 4vw;
+  }
+}
